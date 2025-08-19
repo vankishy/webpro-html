@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="cal">
+        <input type="text" id="input1" disabled>
+        <div class="buttons">
+            <input type="button" value="+" onclick="data('+')">
+            <input type="button" value="-" onclick="data('-')">
+            <input type="button" value="*" onclick="data('*')">
+            <input type="button" value="/" onclick="data('/')">
+        </div>
+
+        <div>
+            <div>
+                <div>
+                    <input type="button" value="7" onclick="data(7)">
+                    <input type="button" value="8" onclick="data(8)">
+                    <input type="button" value="9" onclick="data(9)">
+                </div>
+
+                <div>
+                    <input type="button" value="4" onclick="data(4)">
+                    <input type="button" value="5" onclick="data(5)">
+                    <input type="button" value="6" onclick="data(6)">
+                </div>
+                
+                <div>
+                    <input type="button" value="1" onclick="data(1)">
+                    <input type="button" value="2" onclick="data(2)">
+                    <input type="button" value="3" onclick="data(3)">
+                </div>
+
+                <div>
+                    <input type="button" value="0" onclick="data(0)">
+                    <input type="button" value="." onclick="data('.')">
+                    <input type="button" value="AC" onclick="clear()">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <input type="button" value="=" onclick="hitung()">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let dataInput = "";
+
+        function data(nilai) {
+            dataInput += nilai;
+            document.getElementById("input1").value = dataInput;
+        }
+
+        function clear() {
+            // dataInput = "";
+            document.getElementById("input1").value = "";
+        }
+
+        function hitung() {
+            dataInput = eval(dataInput);
+            document.getElementById("input1").value = dataInput;
+        }
+
+    </script>
+</body>
+</html>
